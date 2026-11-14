@@ -1,16 +1,15 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
-
+/**
+ * Книга, хранящаяся в библиотеке.
+ */
 public class Book {
     private static int idCounter = 0;
-    private int idBook;
-    private String name;
-    private Author author;
-    private int year;
+    private final int idBook;
+    private final String name;
+    private final Author author;
+    private final int year;
     private int count;
-    public static Map<Integer, Book> books = new HashMap<>();
 
     public Book(String name, Author author, int year, int count) {
         idCounter++;
@@ -19,7 +18,6 @@ public class Book {
         this.author = author;
         this.year = year;
         this.count = count;
-        books.put(this.idBook, this);
     }
 
     public int getIdBook() {

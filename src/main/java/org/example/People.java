@@ -1,5 +1,8 @@
 package org.example;
 
+/**
+ * Базовый класс для всех людей в системе библиотеки (читатель, работник, автор).
+ */
 public abstract class People {
     protected String fio;
     protected String birthday;

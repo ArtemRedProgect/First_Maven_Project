@@ -1,31 +1,25 @@
 package org.example;
 
-import java.util.Scanner;
-
+/**
+ * Работник библиотеки.
+ */
 public class Worker extends People {
-    Scanner scan = new Scanner(System.in);
-    static int id_counter = 0;
-    private String status;
-    private int id_worker;
+    private static int idCounter = 0;
+    private final String status;
+    private final int idWorker;
 
     public Worker(String fio, String birthday, String status) {
         super(fio, birthday);
         this.status = status;
-        id_counter++;
-        id_worker = id_counter;
+        idCounter++;
+        this.idWorker = idCounter;
     }
 
     public int getIdWorker() {
-        return id_worker;
+        return idWorker;
     }
 
     public String getStatus() {
         return status;
-    }
-
-    public void checking_book() {
-        System.out.println("Наличие книг в библиотеке: ");
-        System.out.println(Book.books.size());
-        System.out.println("Книги: " + Book.books);
     }
 }

@@ -2,13 +2,14 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
+/**
+ * Автор книг в библиотеке.
+ */
 public class Author extends People {
     private static int idCounter = 0;
-    private int idAuthor;
-    private String flashBio;
-    private List<Book> books = new ArrayList<>();
+    private final int idAuthor;
+    private final String flashBio;
+    private final List<Book> books = new ArrayList<>();
 
     public Author(String fio, String birthday, String flashBio) {
         super(fio, birthday);
@@ -27,23 +28,6 @@ public class Author extends People {
 
     public List<Book> getBooks() {
         return books;
-    }
-
-    public void newBook() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите название новой книги: ");
-        String name = scanner.nextLine();
-
-        System.out.print("Введите год издания книги: ");
-        int year = scanner.nextInt();
-
-        System.out.print("Введите количество поставляемых книг: ");
-        int count = scanner.nextInt();
-
-        this.books.add(new Book(name, this, year, count));
-
-        System.out.println("Книга \"" + name + "\" успешно добавлена автору!");
     }
 
     public String getFio() {
